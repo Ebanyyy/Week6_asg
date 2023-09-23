@@ -1,0 +1,15 @@
+<h3>IMDb</h3>
+
+<% if @movies.any? %>
+	<% @movies.each do |movie| %>
+		<p>
+			Title: <%= movie.title %>
+			<br>
+			Director: <%= movie.director%>
+			<a href="/movies/<%= movie.id%>">Details</a>
+		</p>
+	<% end %>
+<% else %>
+	<p> Movie not found.</p>
+<% end %>
+

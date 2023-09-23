@@ -1,4 +1,6 @@
 development:
   adapter: postgresql
-  database: sinatra_active_record
+  database: Week6
   host: localhost
+  user: postgres 
+  password: Elevate2023
