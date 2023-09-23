@@ -15,6 +15,7 @@ class DataManager
 				plot_summary: row[7],
 				director: row[9]
 				)
+		
 		end
 	end
 end

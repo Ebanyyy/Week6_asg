@@ -11,10 +11,10 @@ get '/' do
 	erb :index
 end 
 
-
-# get 'movies' do 
-# 	erb :movies
-# end
+get '/movies' do 
+	@movies = Movie.take(12)
+	erb :movies
+end
 
 # get '/movies' do 
 # 	@movies = Movie.all 
@@ -52,17 +52,9 @@ post '/signin' do
 	@user = User.find_by(user_name: params[:username])
 	if @user && @user.authenticate(params[:password])
 		session[:user_id] = @user.id
-		erb :movies
+		redirect '/movies'
 	else
 		erb :signin
 	end
 end
 
-get '/movies' do 
-	@movies = Movie.take(12)
-	erb :movies
-end 
-
-post '/movies' do
-	@movies = Movie.find(params[:id])
-end
